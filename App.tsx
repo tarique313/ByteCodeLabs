@@ -393,7 +393,7 @@ const App: React.FC = () => {
                         </select>
                       </div>
                       <div className="space-y-2">
-                        <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Message Payload</label>
+                        <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Message</label>
                         <textarea 
                           name="message"
                           value={formData.message}
@@ -444,15 +444,15 @@ const App: React.FC = () => {
                         <span className="text-black font-bold">HTTPS/TLS 1.3</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-slate-400 font-bold">IDENT:</span>
+                        <span className="text-slate-400 font-bold">Name:</span>
                         <span className="text-black">{formData.name.toUpperCase()}</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-slate-400 font-bold">COMMS:</span>
+                        <span className="text-slate-400 font-bold">Email:</span>
                         <span className="text-black italic">{formData.email}</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-slate-400 font-bold">DOMAIN:</span>
+                        <span className="text-slate-400 font-bold">Service:</span>
                         <span className="text-black">{formData.service.replace('-', ' ').toUpperCase()}</span>
                       </div>
                       <div className="pt-2 flex justify-between text-slate-400 border-t border-slate-100">
