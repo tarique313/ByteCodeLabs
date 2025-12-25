@@ -48,7 +48,7 @@ export const SERVICES: Service[] = [
 ];
 
 export const PARTNERS: string[] = [
-  "Holon InfoSec",
+  "Hoplon InfoSec",
   "Purdue University",
   "Lookout",
   "Microsoft"

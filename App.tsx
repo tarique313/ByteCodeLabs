@@ -260,9 +260,6 @@ const App: React.FC = () => {
                 Offensive security research paired with defensive software architecture.
               </p>
             </div>
-            <button className="text-sm font-black uppercase tracking-widest flex items-center gap-2 border-b-2 border-black pb-1 hover:gap-4 transition-all">
-              View All Systems <ChevronRight size={16} />
-            </button>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
