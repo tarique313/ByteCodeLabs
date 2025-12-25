@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import { 
-  Shield, 
-  ChevronRight, 
-  Menu, 
-  X, 
-  ArrowRight, 
-  Github, 
-  Twitter, 
-  Linkedin, 
-  CheckCircle2, 
-  Terminal, 
-  Mail, 
-  Loader2, 
+import {
+  Shield,
+  ChevronRight,
+  Menu,
+  X,
+  ArrowRight,
+  Github,
+  Twitter,
+  Linkedin,
+  CheckCircle2,
+  Terminal,
+  Mail,
+  Loader2,
   RefreshCw,
   Lock,
   Cpu,
@@ -26,7 +26,7 @@ const App: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [terminalText, setTerminalText] = useState('');
-  
+
   // Form State
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -75,7 +75,7 @@ const App: React.FC = () => {
 
   const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Basic Validation
     if (!formData.name.trim() || !formData.email.trim()) {
       setError("Identity and Comms fields are required.");
@@ -104,7 +104,7 @@ const App: React.FC = () => {
           service: formData.service,
           message: formData.message,
           _subject: `ByteCode Labs Inquiry: ${formData.name}`,
-          _gotcha: "" 
+          _gotcha: ""
         })
       });
 
@@ -151,7 +151,7 @@ const App: React.FC = () => {
                 {item}
               </button>
             ))}
-            <button 
+            <button
               onClick={() => scrollToSection(SectionId.CONTACT)}
               className="bg-black hover:bg-slate-800 text-white font-bold px-6 py-2 rounded-lg text-sm transition-all hover:shadow-lg"
             >
@@ -159,7 +159,7 @@ const App: React.FC = () => {
             </button>
           </div>
 
-          <button 
+          <button
             className="md:hidden text-black"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
@@ -180,7 +180,7 @@ const App: React.FC = () => {
               {item}
             </button>
           ))}
-          <button 
+          <button
             onClick={() => scrollToSection(SectionId.CONTACT)}
             className="bg-black text-white font-bold px-10 py-4 rounded-lg text-lg"
           >
@@ -210,13 +210,13 @@ const App: React.FC = () => {
                 Elite cybersecurity auditing, penetration testing, and software development for the next generation of digital infrastructure.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <button 
+                <button
                   onClick={() => scrollToSection(SectionId.CONTACT)}
                   className="bg-black hover:bg-slate-800 text-white font-bold px-8 py-4 rounded-xl flex items-center justify-center gap-2 transition-all hover:scale-[1.02] shadow-xl"
                 >
                   Start Your Audit <ArrowRight size={20} />
                 </button>
-                <button 
+                <button
                   onClick={() => scrollToSection(SectionId.SERVICES)}
                   className="bg-white border-2 border-black text-black font-bold px-8 py-4 rounded-xl flex items-center justify-center gap-2 transition-all hover:bg-slate-50"
                 >
@@ -243,7 +243,7 @@ const App: React.FC = () => {
                   <span className="inline-block w-2 h-4 bg-white animate-pulse ml-1"></span>
                 </div>
               </div>
-              
+
               <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-slate-300/30 rounded-full blur-3xl"></div>
             </div>
           </div>
@@ -264,7 +264,7 @@ const App: React.FC = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {SERVICES.map((service) => (
-              <div 
+              <div
                 key={service.id}
                 className="group p-10 rounded-2xl bg-slate-50 border border-slate-200 hover:border-black transition-all duration-300"
               >
@@ -301,9 +301,9 @@ const App: React.FC = () => {
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div className="relative order-2 lg:order-1">
-              <img 
-                src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1000" 
-                alt="Cyber Security Detail" 
+              <img
+                src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1000"
+                alt="Cyber Security Detail"
                 className="rounded-2xl shadow-2xl grayscale brightness-90 hover:grayscale-0 transition-all duration-700"
               />
               <div className="absolute -bottom-8 -right-8 bg-black p-10 rounded-2xl border border-black shadow-2xl hidden md:block">
@@ -332,7 +332,7 @@ const App: React.FC = () => {
                   </div>
                 ))}
               </div>
-              <button 
+              <button
                 onClick={() => scrollToSection(SectionId.CONTACT)}
                 className="mt-12 bg-black text-white font-black py-4 px-10 rounded-xl hover:bg-slate-800 transition-all uppercase tracking-widest text-sm"
               >
@@ -355,35 +355,35 @@ const App: React.FC = () => {
                     <p className="text-slate-500 mb-10 text-lg font-medium">
                       Connect with our lead analysts for a high-level briefing on your security posture.
                     </p>
-                    
+
                     <form className="space-y-6" onSubmit={handleFormSubmit}>
                       <div className="grid sm:grid-cols-2 gap-6">
                         <div className="space-y-2">
-                          <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Ident</label>
-                          <input 
+                          <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Name</label>
+                          <input
                             name="name"
                             value={formData.name}
                             onChange={handleInputChange}
-                            type="text" 
-                            placeholder="NAME / ALIAS" 
+                            type="text"
+                            placeholder="NAME / ALIAS"
                             className={`w-full bg-slate-50 border ${error && !formData.name ? 'border-red-500' : 'border-slate-200'} rounded-lg px-4 py-4 focus:outline-none focus:border-black transition-all font-mono text-sm`}
                           />
                         </div>
                         <div className="space-y-2">
-                          <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Comms</label>
-                          <input 
+                          <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Email</label>
+                          <input
                             name="email"
                             value={formData.email}
                             onChange={handleInputChange}
-                            type="email" 
-                            placeholder="EMAIL@SECURE.COM" 
+                            type="email"
+                            placeholder="EMAIL@SECURE.COM"
                             className={`w-full bg-slate-50 border ${error && !formData.email ? 'border-red-500' : 'border-slate-200'} rounded-lg px-4 py-4 focus:outline-none focus:border-black transition-all font-mono text-sm`}
                           />
                         </div>
                       </div>
                       <div className="space-y-2">
                         <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Requested Domain</label>
-                        <select 
+                        <select
                           name="service"
                           value={formData.service}
                           onChange={handleInputChange}
@@ -394,23 +394,23 @@ const App: React.FC = () => {
                       </div>
                       <div className="space-y-2">
                         <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Message</label>
-                        <textarea 
+                        <textarea
                           name="message"
                           value={formData.message}
                           onChange={handleInputChange}
-                          rows={4} 
-                          placeholder="DESCRIBE YOUR CURRENT STACK..." 
+                          rows={4}
+                          placeholder="DESCRIBE YOUR CURRENT STACK..."
                           className="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-4 focus:outline-none focus:border-black transition-all font-mono text-sm"
                         ></textarea>
                       </div>
-                      
+
                       {error && (
                         <div className="flex items-center gap-2 text-red-600 text-[10px] font-black uppercase tracking-widest bg-red-50 p-3 rounded-lg border border-red-100 animate-in fade-in slide-in-from-top-2">
                           <AlertTriangle size={14} /> {error}
                         </div>
                       )}
 
-                      <button 
+                      <button
                         disabled={isSubmitting}
                         type="submit"
                         className="w-full bg-black hover:bg-slate-800 text-white font-black py-5 rounded-xl transition-all uppercase tracking-[0.3em] shadow-lg flex items-center justify-center gap-3 disabled:opacity-70 disabled:cursor-not-allowed group"
@@ -437,7 +437,7 @@ const App: React.FC = () => {
                     <p className="text-slate-500 mb-8 max-w-sm font-medium">
                       Inquiry encrypted and routed to your secure terminal. You will receive a secure response within 24 hours.
                     </p>
-                    
+
                     <div className="p-6 bg-slate-50 border border-slate-200 rounded-xl font-mono text-[10px] w-full mb-8 text-left space-y-3">
                       <div className="flex justify-between border-b border-slate-200 pb-2">
                         <span className="text-slate-400 font-bold uppercase tracking-widest">Protocol</span>
@@ -461,7 +461,7 @@ const App: React.FC = () => {
                       </div>
                     </div>
 
-                    <button 
+                    <button
                       onClick={resetForm}
                       className="text-xs font-black uppercase tracking-widest flex items-center gap-2 text-slate-400 hover:text-black transition-colors"
                     >
@@ -473,9 +473,9 @@ const App: React.FC = () => {
 
               <div className="bg-black p-12 lg:p-20 flex flex-col justify-between relative overflow-hidden">
                 <div className="absolute inset-0 opacity-5 pointer-events-none">
-                   <div className="w-full h-full" style={{ backgroundImage: 'radial-gradient(#fff 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
+                  <div className="w-full h-full" style={{ backgroundImage: 'radial-gradient(#fff 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
                 </div>
-                
+
                 <div className="relative z-10">
                   <h3 className="text-white text-3xl font-black mb-12 leading-tight tracking-tight uppercase">
                     "BYTECODE LABS IS THE GOLD STANDARD FOR OFFENSIVE SECURITY AUDITING."
@@ -505,7 +505,7 @@ const App: React.FC = () => {
                     </div>
                     <div>
                       <div className="text-slate-500 font-black uppercase text-[10px] tracking-widest mb-1">ADDRESS</div>
-                      <div className="text-white font-bold uppercase tracking-tighter">7 Paribagh, Fairy Homes, Suite#1502, Dhaka 1000, Bangladesh</div>
+                      <div className="text-white font-bold uppercase tracking-tighter">7 Paribagh, Fairy Homes, Suite#1502, Dhaka 1000, Bangladesh.</div>
                     </div>
                   </div>
                 </div>
@@ -525,7 +525,7 @@ const App: React.FC = () => {
                 Premium digital fortification and high-performance software engineering. Build for security.
               </p>
             </div>
-            
+
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-20">
               <div>
                 <h4 className="font-black mb-8 text-white uppercase text-xs tracking-[0.3em]">Services</h4>
