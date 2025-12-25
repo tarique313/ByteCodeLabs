@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Shield, ShieldAlert, Globe, Smartphone, Mail, Lock } from 'lucide-react';
 import { Service } from './types';
@@ -46,6 +45,13 @@ export const SERVICES: Service[] = [
     icon: 'Lock',
     category: 'Security'
   }
+];
+
+export const PARTNERS: string[] = [
+  "Holon InfoSec",
+  "Purdue University",
+  "Lookout",
+  "Microsoft"
 ];
 
 export const getIcon = (name: string, size = 24) => {

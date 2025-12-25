@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { 
   Shield, 
@@ -20,7 +19,7 @@ import {
 } from 'lucide-react';
 import Logo from './components/Logo';
 import ChatWidget from './components/ChatWidget';
-import { SERVICES, getIcon } from './constants';
+import { SERVICES, PARTNERS, getIcon } from './constants';
 import { SectionId } from './types';
 
 const App: React.FC = () => {
@@ -93,7 +92,6 @@ const App: React.FC = () => {
     setError(null);
 
     try {
-      // Updated with the Form ID from your screenshot: mpqaggno
       const response = await fetch("https://formspree.io/f/mpqaggno", {
         method: "POST",
         headers: {
@@ -130,7 +128,6 @@ const App: React.FC = () => {
       service: SERVICES[0].id,
       message: ''
     });
-    setIsSubmitted(true); // Keeping success view active but reset internal data if needed
     setIsSubmitted(false);
     setError(null);
   };
@@ -258,7 +255,7 @@ const App: React.FC = () => {
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
             <div className="max-w-xl">
-              <h2 className="text-4xl md:text-6xl font-black mb-4 tracking-tighter uppercase">Capabilities</h2>
+              <h2 className="text-4xl md:text-6xl font-black mb-4 tracking-tighter uppercase">Services</h2>
               <p className="text-slate-500 text-lg font-medium">
                 Offensive security research paired with defensive software architecture.
               </p>
@@ -278,12 +275,24 @@ const App: React.FC = () => {
                   {getIcon(service.icon, 24)}
                 </div>
                 <h3 className="text-2xl font-black mb-4 uppercase tracking-tighter">{service.title}</h3>
-                <p className="text-slate-600 leading-relaxed mb-8 font-medium">
+                <p className="text-slate-600 leading-relaxed font-medium">
                   {service.description}
                 </p>
-                <button className="text-black font-bold text-xs uppercase tracking-widest flex items-center gap-1">
-                  System Specs <ChevronRight size={14} />
-                </button>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Partners Section */}
+      <section className="py-20 bg-slate-50 border-y border-slate-200">
+        <div className="container mx-auto px-6">
+          <h2 className="text-center text-[10px] font-black uppercase tracking-[0.4em] text-slate-400 mb-12">Our Partners</h2>
+          <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+            {PARTNERS.map((partner) => (
+              <div key={partner} className="text-xl md:text-2xl font-black tracking-tighter uppercase text-slate-900 flex items-center gap-2">
+                <span className="text-slate-300 font-mono text-base font-bold">&lt;/&gt;</span>
+                {partner}
               </div>
             ))}
           </div>
@@ -345,7 +354,7 @@ const App: React.FC = () => {
               <div className="p-12 lg:p-20 flex flex-col justify-center">
                 {!isSubmitted ? (
                   <>
-                    <h2 className="text-4xl font-black mb-6 tracking-tighter uppercase">Inquire</h2>
+                    <h2 className="text-4xl font-black mb-6 tracking-tighter uppercase">Contact Us</h2>
                     <p className="text-slate-500 mb-10 text-lg font-medium">
                       Connect with our lead analysts for a high-level briefing on your security posture.
                     </p>
@@ -412,11 +421,11 @@ const App: React.FC = () => {
                         {isSubmitting ? (
                           <>
                             <Loader2 className="animate-spin" size={20} />
-                            TRANSMITTING...
+                            SUBMITTING...
                           </>
                         ) : (
                           <>
-                            Transmit <Cpu className="group-hover:rotate-12 transition-transform" size={18} />
+                            Submit <Cpu className="group-hover:rotate-12 transition-transform" size={18} />
                           </>
                         )}
                       </button>
@@ -477,20 +486,20 @@ const App: React.FC = () => {
                   <div className="flex items-center gap-6">
                     <div className="w-16 h-16 rounded bg-slate-800 flex items-center justify-center font-black text-white text-2xl">MV</div>
                     <div>
-                      <div className="font-black text-white text-xl uppercase tracking-tighter">Marcus Vane</div>
-                      <div className="text-slate-500 font-bold text-xs uppercase tracking-widest">Nexus Dynamics Group</div>
+                      <div className="font-black text-white text-xl uppercase tracking-tighter">SAM Jaber</div>
+                      <div className="text-slate-500 font-bold text-xs uppercase tracking-widest">Hoplon InfoSec</div>
                     </div>
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 gap-12 relative z-10 mt-16 pt-16 border-t border-slate-800">
                   <div className="flex items-center gap-6 group cursor-pointer">
-                    <div className="w-12 h-12 rounded border border-slate-800 flex items-center justify-center text-slate-400 group-hover:bg-white group-hover:text-black transition-all">
+                    <a href="mailto:info@bytecodelabsbd.com" className="w-12 h-12 rounded border border-slate-800 flex items-center justify-center text-slate-400 group-hover:bg-white group-hover:text-black transition-all">
                       <Mail size={20} />
-                    </div>
+                    </a>
                     <div>
                       <div className="text-slate-500 font-black uppercase text-[10px] tracking-widest mb-1">Secure Channel</div>
-                      <div className="text-white font-bold font-mono">ops@bytecodelabs.io</div>
+                      <a href="mailto:info@bytecodelabsbd.com" className="text-white font-bold font-mono hover:underline">info@bytecodelabsbd.com</a>
                     </div>
                   </div>
                   <div className="flex items-center gap-6">
@@ -498,8 +507,8 @@ const App: React.FC = () => {
                       <Lock size={20} />
                     </div>
                     <div>
-                      <div className="text-slate-500 font-black uppercase text-[10px] tracking-widest mb-1">HQ Location</div>
-                      <div className="text-white font-bold uppercase tracking-tighter">San Francisco // Tech District</div>
+                      <div className="text-slate-500 font-black uppercase text-[10px] tracking-widest mb-1">ADDRESS</div>
+                      <div className="text-white font-bold uppercase tracking-tighter">7 Paribagh, Fairy Homes, Suite#1502, Dhaka 1000, Bangladesh.</div>
                     </div>
                   </div>
                 </div>

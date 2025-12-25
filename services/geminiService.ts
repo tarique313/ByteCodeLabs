@@ -1,4 +1,3 @@
-
 import { GoogleGenAI } from "@google/genai";
 
 // Fixed to use process.env.API_KEY directly and follow SDK rules for initialization and response handling
@@ -20,6 +19,9 @@ export const sendMessageToGemini = async (message: string, history: { role: stri
         - Email Security: Phishing and ransomware prevention.
         - Mobile Security: Device hardening and secure comms.
         
+        Official Domain: bytecodelabsbd.com
+        Official Contact Email: info@bytecodelabsbd.com
+
         Keep your tone professional, tech-savvy, and concise. 
         Encourage users to book a consultation for specific inquiries. 
         If asked about pricing, mention it depends on the project scope and suggests a discovery call.`,
