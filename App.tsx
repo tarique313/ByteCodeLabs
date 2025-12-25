@@ -486,8 +486,8 @@ const App: React.FC = () => {
                   <div className="flex items-center gap-6">
                     <div className="w-16 h-16 rounded bg-slate-800 flex items-center justify-center font-black text-white text-2xl">MV</div>
                     <div>
-                      <div className="font-black text-white text-xl uppercase tracking-tighter">SAM Jaber</div>
-                      <div className="text-slate-500 font-bold text-xs uppercase tracking-widest">Hoplon InfoSec</div>
+                      <div className="font-black text-white text-xl uppercase tracking-tighter">Marcus Vane</div>
+                      <div className="text-slate-500 font-bold text-xs uppercase tracking-widest">Nexus Dynamics Group</div>
                     </div>
                   </div>
                 </div>
@@ -508,7 +508,7 @@ const App: React.FC = () => {
                     </div>
                     <div>
                       <div className="text-slate-500 font-black uppercase text-[10px] tracking-widest mb-1">ADDRESS</div>
-                      <div className="text-white font-bold uppercase tracking-tighter">7 Paribagh, Fairy Homes, Suite#1502, Dhaka 1000, Bangladesh.</div>
+                      <div className="text-white font-bold uppercase tracking-tighter">7 Paribagh, Fairy Homes, Suite#1502, Dhaka 1000</div>
                     </div>
                   </div>
                 </div>
