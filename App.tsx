@@ -483,8 +483,8 @@ const App: React.FC = () => {
                   <div className="flex items-center gap-6">
                     <div className="w-16 h-16 rounded bg-slate-800 flex items-center justify-center font-black text-white text-2xl">MV</div>
                     <div>
-                      <div className="font-black text-white text-xl uppercase tracking-tighter">Marcus Vane</div>
-                      <div className="text-slate-500 font-bold text-xs uppercase tracking-widest">Nexus Dynamics Group</div>
+                      <div className="font-black text-white text-xl uppercase tracking-tighter">SAM Jaber</div>
+                      <div className="text-slate-500 font-bold text-xs uppercase tracking-widest">HOPLON INFOSEC</div>
                     </div>
                   </div>
                 </div>
