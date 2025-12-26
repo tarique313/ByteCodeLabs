@@ -506,6 +506,7 @@ const App: React.FC = () => {
                     <div>
                       <div className="text-slate-500 font-black uppercase text-[10px] tracking-widest mb-1">ADDRESS</div>
                       <div className="text-white font-bold uppercase tracking-tighter">7 Paribagh, Fairy Homes, Suite#1502, Dhaka 1000, Bangladesh.</div>
+                      <div className="text-white font-bold uppercase tracking-tighter">Cell Phone: +880-177-298-6662</div>
                     </div>
                   </div>
                 </div>
