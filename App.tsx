@@ -15,7 +15,8 @@ import {
   RefreshCw,
   Lock,
   Cpu,
-  AlertTriangle
+  AlertTriangle,
+  PhoneCall
 } from 'lucide-react';
 import Logo from './components/Logo';
 import ChatWidget from './components/ChatWidget';
@@ -495,8 +496,17 @@ const App: React.FC = () => {
                       <Mail size={20} />
                     </a>
                     <div>
-                      <div className="text-slate-500 font-black uppercase text-[10px] tracking-widest mb-1">Secure Channel</div>
+                      <div className="text-slate-500 font-black uppercase text-[10px] tracking-widest mb-1">Email</div>
                       <a href="mailto:info@bytecodelabsbd.com" className="text-white font-bold font-mono hover:underline">info@bytecodelabsbd.com</a>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-6">
+                    <div className="w-12 h-12 rounded border border-slate-800 flex items-center justify-center text-slate-400">
+                      <PhoneCall size={20} />
+                    </div>
+                    <div>
+                      <div className="text-slate-500 font-black uppercase text-[10px] tracking-widest mb-1">Cell Phone</div>
+                      <div className="text-white font-bold uppercase tracking-tighter">+880-177-298-6662</div>
                     </div>
                   </div>
                   <div className="flex items-center gap-6">
@@ -506,7 +516,6 @@ const App: React.FC = () => {
                     <div>
                       <div className="text-slate-500 font-black uppercase text-[10px] tracking-widest mb-1">ADDRESS</div>
                       <div className="text-white font-bold uppercase tracking-tighter">7 Paribagh, Fairy Homes, Suite#1502, Dhaka 1000, Bangladesh.</div>
-                      <div className="text-white font-bold uppercase tracking-tighter">Cell Phone: +880-177-298-6662</div>
                     </div>
                   </div>
                 </div>
